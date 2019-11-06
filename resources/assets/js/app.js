@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex';
 import VueRouter from 'vue-router'
 import Router from 'vue-router';
-
+import Vuelidate from 'vuelidate'
 
 
 const originalPush = Router.prototype.push;
@@ -12,8 +12,8 @@ Router.prototype.push = function push(location) {
     return originalPush.call(this, location).catch(err => err)
 };
 
-// import VeeValidate from 'vee-validate'
-// Vue.use(VeeValidate)
+
+Vue.use(Vuelidate)
 Vue.use(Vuex);
 Vue.use(Router);
 Vue.use(VueRouter)

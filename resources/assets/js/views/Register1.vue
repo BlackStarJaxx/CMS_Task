@@ -22,6 +22,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control" v-model="email" required>
                                 </div>
+
                             </div>
 
                             <div class="form-group row">
@@ -55,8 +56,17 @@
     </div>
 </template>
 
+
+
 <script>
+
+
     export default {
+
+        name: 'register1',
+
+
+
         props : ['nextUrl'],
         data(){
             return {
@@ -95,13 +105,15 @@
                         .catch(error => {
                             console.error(error);
                         });
-                } else {
+                }
+                else {
                     this.password = ""
                     this.passwordConfirm = ""
-
+                    this.email=""
                     return alert('Passwords do not match')
                 }
             }
+
         }
     }
 </script>

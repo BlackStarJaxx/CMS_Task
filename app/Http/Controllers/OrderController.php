@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
 {
@@ -27,12 +28,22 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'quantity' =>'required|integer',
+            'address' => 'required|string|min:7',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 422);
+        }
+
         $order = Order::create([
             'product_id' => $request->product_id,
             'user_id' => Auth::id(),
             'quantity' => $request->quantity,
             'address' => $request->address,
         ]);
+
 
         return response()->json([
             'status' => (bool) $order,

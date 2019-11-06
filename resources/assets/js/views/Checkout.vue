@@ -11,7 +11,12 @@
                     <p class="small-text text-muted float-right">Available Units: {{product.units}}</p>
                     <br>
                     <hr>
-                    <label class="row"><span class="col-md-2 float-left">Quantity: </span><input type="number" name="units" min="1" :max="product.units" class="col-md-2 float-left" v-model="quantity" @change="checkUnits"></label>
+                    <label class="row">
+                        <span class="col-md-2 float-left">Quantity: </span>
+                        <input type="number" name="units" min="1" :max="product.units" class="col-md-2 float-left form-control is-valid"
+                               v-model="quantity" @change="checkUnits" >
+                        <h5 class="text-danger col-md-5 float-left " v-if="!quantity">  Units must be integer number</h5>
+                    </label>
                 </div>
                 <br>
                 <div>
@@ -24,7 +29,10 @@
                         <div class="row">
                             <label for="address" class="col-md-3 col-form-label">Delivery Address</label>
                             <div class="col-md-9">
-                                <input id="address" type="text" class="form-control" v-model="address" required>
+                                <input id="address" type="text" class="form-control " placeholder="Your address" v-model="address" required>
+                                <h5 class="text-danger col-md-7 float-left" v-if="!address"   @click="placeOrder">The address must be strings and not be null</h5>
+                                <h5 class="text-danger col-md-7 float-left" v-else-if="!address.address"> Min  7 letters </h5>
+
                             </div>
                         </div>
                         <br>
@@ -42,6 +50,7 @@
     .title { font-size: 36px; }
 </style>
 <script>
+
     export default {
         props : ['pid'],
         data(){

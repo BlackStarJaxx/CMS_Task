@@ -55,7 +55,6 @@
                 user_type: 0,
                 isLoggedIn: localStorage.getItem('bigStore.jwt') != null,
                 selectedCurrency: this.$store.state.currency ,
-
             }
         },
         mounted() {
