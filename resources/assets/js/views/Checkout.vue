@@ -5,7 +5,7 @@
                 <div class="order-box">
                     <router-link :to="{name: 'home'}" class="btn btn-dark float-md-right">Back</router-link>
 
-                    <img :src="product.image" :alt="product.name">
+                    <img width="100%" :src="product.image" :alt="product.name">
                     <h2 class="title" v-html="product.name"></h2>
                     <p class="small-text text-muted float-left">{{product.price}} {{product.currency}}</p>
                     <p class="small-text text-muted float-right">Available Units: {{product.units}}</p>

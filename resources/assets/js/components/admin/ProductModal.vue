@@ -17,7 +17,7 @@
                         <span >
 
 
-              <img :src="data.image" v-show="data.image != null">
+              <img width="100%" :src="data.image" v-show="data.image != null">
               <input type="file" id="file" @change="attachFile">
             </span>
                     </slot>

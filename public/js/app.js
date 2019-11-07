@@ -39583,7 +39583,7 @@ var render = function() {
                       expression: "data.image != null"
                     }
                   ],
-                  attrs: { src: _vm.data.image }
+                  attrs: { width: "100%", src: _vm.data.image }
                 }),
                 _vm._v(" "),
                 _c("input", {
@@ -40224,7 +40224,11 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("img", {
-              attrs: { src: _vm.product.image, alt: _vm.product.name }
+              attrs: {
+                width: "100%",
+                src: _vm.product.image,
+                alt: _vm.product.name
+              }
             }),
             _vm._v(" "),
             _c("h2", {
@@ -40516,7 +40520,11 @@ var render = function() {
                     { attrs: { to: { path: "/products/" + product.id } } },
                     [
                       _c("img", {
-                        attrs: { src: product.image, alt: product.name }
+                        attrs: {
+                          width: "100%",
+                          src: product.image,
+                          alt: product.name
+                        }
                       }),
                       _vm._v(" "),
                       _c("h5", [
@@ -41003,7 +41011,11 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("img", {
-            attrs: { src: _vm.product.image, alt: _vm.product.name }
+            attrs: {
+              width: "100%",
+              src: _vm.product.image,
+              alt: _vm.product.name
+            }
           }),
           _vm._v(" "),
           _c("h3", {

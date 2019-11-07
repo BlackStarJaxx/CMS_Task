@@ -4,7 +4,7 @@
             <div class="col-md-8 offset-md-2">
                 <router-link :to="{name: 'home'}" class="btn btn-dark float-md-right">Back</router-link>
 
-                <img :src="product.image" :alt="product.name">
+                <img width="100%" :src="product.image" :alt="product.name">
                 <h3 class="title" v-html="product.name"></h3>
                 <p class="text-muted">{{product.description}}</p>
                 <h4>
